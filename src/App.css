@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -13,8 +14,57 @@
   }
 }
 
+.selected {
+  background-color: blue
+}
+
+.container{
+  display: flex;
+}
+
+.square:focus {
+  outline: none;
+  background: #ddd;
+}
+
+.square-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game {
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  margin: 20px;
+  min-height: 260px;
+}
+
+.game ol,
+.game ul {
+  padding-left: 30px;
+}
+
+.square{
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,3 +86,38 @@
     transform: rotate(360deg);
   }
 }
+
+ul {
+  display: flex;
+  list-style: none;
+  gap:10px;
+  /* justify-content: space-between; */
+  .logo{
+    margin-right: auto
+  }
+}
+
+form{
+  display:flex;
+  flex-wrap: wrap;
+  border: 1px solid hotpink;
+  gap:10px; 
+  padding:10px;
+
+  [type="text"] {
+    flex-basis: 100px;
+    flex-grow: 1;
+  }
+  
+  [type="email"] {
+    flex-basis: 200px;
+    flex-grow: 3;
+  }
+  
+  [type="submit"] {
+    flex-basis: 100px;
+    flex-grow: 1;
+  }
+
+}
+

@@ -1,0 +1,26 @@
+.inputContainer {
+  margin-top: 5%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.dash {
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+}
+
+#inp {
+  margin-top: 5%;
+  width: 20px;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  margin: auto;
+}
