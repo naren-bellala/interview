@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This was created in 24 hours (timeboxed).
 
 ## Available Scripts
 
@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.
+- Launches the test runner in the interactive watch mode.
 
 ### Folder structure
 
@@ -22,7 +22,18 @@ Launches the test runner in the interactive watch mode.
 ### API
 
 - BE data is provided by: <https://graphql-pokemon2.vercel.app/>
+- uses Graphql queries to fetch data.  
+
+### Favourites
+
+- Using localstorage to mark and unmark your favourite pokemons.
+- So the favourites are persistent on refresh.
 
 ### Error Boundary
 
 - Added Error boundary to handle the runtime errors. [ErrorBoundary](./src/components/molecules/PokemonErrorBoundary.js)
+
+#### TODO
+
+- Pagination (Currently it only limits to 150 items)
+- complete Test coverage

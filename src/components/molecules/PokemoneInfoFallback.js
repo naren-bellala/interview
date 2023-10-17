@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import PokemonDataView from "../atoms/PokemonDataView";
+import { PokemonCard } from "../atoms";
 
-export default function PokemonInfoFallback({ name }) {
+export function PokemonInfoFallback({ name }) {
   const initialName = useRef(name).current;
   const fallbackPokemonData = {
     name: initialName,
@@ -14,5 +14,5 @@ export default function PokemonInfoFallback({ name }) {
       ],
     },
   };
-  return <PokemonDataView pokemon={fallbackPokemonData} />;
+  return <PokemonCard pokemon={fallbackPokemonData} />;
 }

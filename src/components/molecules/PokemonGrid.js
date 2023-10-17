@@ -1,8 +1,10 @@
 import { useAsync } from "../../hooks/useAsync";
 import { fetchPokemon } from "../../services/Pokemon";
-import PokemonDataView from "../atoms/PokemonDataView";
+import { PokemonCard } from "../atoms";
+import { useLocalStorageState } from "../../hooks/useLocalStorage";
 
 export function PokemonGrid() {
+  const [favourites, setFavourites] = useLocalStorageState("favourites", []);
   const state = useAsync(
     () => {
       return fetchPokemon();
@@ -24,7 +26,12 @@ export function PokemonGrid() {
       return (
         <div className="grid">
           {pokemons.map((pokemon) => (
-            <PokemonDataView key={pokemon.id} pokemon={pokemon} />
+            <PokemonCard
+              key={pokemon.id}
+              pokemon={pokemon}
+              favourites={favourites}
+              setFavourites={setFavourites}
+            />
           ))}
         </div>
       );
