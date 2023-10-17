@@ -150,9 +150,6 @@ iframe
 
 .fav {
   color: #8a3b3b;
-  :hover{
-    color: #ca2525;
-  }
 }
 
 .notFav {

@@ -6,7 +6,7 @@ export function PokemonCard({ pokemon, favourites = [], setFavourites }) {
     if (index < 0) {
       setFavourites([...favourites, pokemon.number.toString()]);
     } else {
-      setFavourites([...favourites].filter((i, ind) => ind !== index));
+      setFavourites([...favourites].filter((i, _index) => _index !== index));
     }
   }
   return (

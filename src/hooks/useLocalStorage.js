@@ -11,7 +11,6 @@ function useLocalStorageState(key, defaultValue = []) {
       }
     }
     return defaultValue;
-    // return typeof defaultValue === "function" ? defaultValue() : defaultValue;
   });
 
   const prevKeyRef = useRef(key);
