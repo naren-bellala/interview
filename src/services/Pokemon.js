@@ -1,20 +1,20 @@
 export function fetchPokemon(name = "") {
   const fetchAllQuery = `
     query {
-        pokemons(first: 151) {
-            id
-            number
+      pokemons(first: 151) {
+        id
+        number
+        name
+        image
+        attacks {
+          special {
             name
-            image
-            attacks {
-                special {
-                    name
-                    type
-                    damage
-                }
-            }
-        } 
-}`;
+            type
+            damage
+          }
+        }
+      }
+    }`;
 
   const pokemonQuery = `
     query PokemonInfo($name: String) {
@@ -31,8 +31,7 @@ export function fetchPokemon(name = "") {
           }
         }
       }
-    }
-  `;
+    }`;
 
   return window
     .fetch("https://graphql-pokemon2.vercel.app/", {

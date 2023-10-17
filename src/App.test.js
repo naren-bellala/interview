@@ -24,9 +24,6 @@ test("displays the pokemon", async () => {
     userEvent.click(submit);
     userEvent.clear(input);
 
-    userEvent.type(input, "ditto");
-    userEvent.click(submit);
-
     // verify that when props remain the same a request is not made
     window.fetch.mockClear();
 

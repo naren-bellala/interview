@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { PokemonForm, PokemonGrid, PokemonErrorBoundary } from "../molecules";
 import { PokemonInfo } from "./PokemonInfo";
-// import { useLocalStorageState } from "../../hooks/useLocalStorage";
+import { FavouritesCheckbox } from "../atoms";
 
 export default function Pokemon() {
   const [pokemonName, setPokemonName] = useState("");
+  const [showFavourites, setShowFavourites] = useState(false);
 
   function handleSubmit(newPokemonName) {
     setPokemonName(newPokemonName);
@@ -17,6 +18,12 @@ export default function Pokemon() {
   return (
     <div className="pokemon-info-app">
       <PokemonForm pokemonName={pokemonName} onSubmit={handleSubmit} />
+      {!pokemonName && (
+        <FavouritesCheckbox
+          checked={showFavourites}
+          setChecked={setShowFavourites}
+        />
+      )}
       <hr />
       <PokemonErrorBoundary
         onReset={handleReset}
@@ -25,7 +32,7 @@ export default function Pokemon() {
         {pokemonName ? (
           <PokemonInfo pokemonName={pokemonName} />
         ) : (
-          <PokemonGrid />
+          <PokemonGrid favouritesOnly={showFavourites} />
         )}
       </PokemonErrorBoundary>
     </div>
