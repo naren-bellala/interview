@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function PokemonForm({
+export function PokemonForm({
   pokemonName: externalPokemonName,
   initialPokemonName = externalPokemonName || "",
   onSubmit,
@@ -29,7 +29,7 @@ export default function PokemonForm({
 
   return (
     <form onSubmit={handleSubmit} className="pokemon-form">
-      <label htmlFor="pokemonName-input">Pokemon Name</label>
+      <label htmlFor="pokemonName-input">Pokemon Library</label>
       <small>
         Try{" "}
         <button

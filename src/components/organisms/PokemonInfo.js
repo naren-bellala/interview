@@ -1,9 +1,11 @@
 import { useAsync } from "../../hooks/useAsync";
+import { useLocalStorageState } from "../../hooks/useLocalStorage";
 import { fetchPokemon } from "../../services/Pokemon";
-import PokemonDataView from "../atoms/PokemonDataView";
-import PokemonInfoFallback from "../molecules/PokemoneInfoFallback";
+import { PokemonCard } from "../atoms";
+import { PokemonInfoFallback } from "../molecules";
 
 export function PokemonInfo({ pokemonName }) {
+  const [favourites, setFavourites] = useLocalStorageState("favourites", []);
   const state = useAsync(
     () => {
       if (!pokemonName) {
@@ -25,7 +27,13 @@ export function PokemonInfo({ pokemonName }) {
     case "rejected":
       throw error;
     case "resolved":
-      return <PokemonDataView pokemon={pokemon} />;
+      return (
+        <PokemonCard
+          pokemon={pokemon}
+          favourites={favourites}
+          setFavourites={setFavourites}
+        />
+      );
     default:
       throw new Error("invalid action");
   }

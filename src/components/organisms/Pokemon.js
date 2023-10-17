@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { PokemonErrorBoundary } from "../molecules/PokemonErrorBoundary";
-import PokemonForm from "../molecules/PokemonForm";
+import { PokemonForm, PokemonGrid, PokemonErrorBoundary } from "../molecules";
 import { PokemonInfo } from "./PokemonInfo";
-import { PokemonGrid } from "../molecules/PokemonGrid";
+// import { useLocalStorageState } from "../../hooks/useLocalStorage";
 
 export default function Pokemon() {
   const [pokemonName, setPokemonName] = useState("");

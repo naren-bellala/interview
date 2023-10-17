@@ -1,6 +1,22 @@
-export default function PokemonDataView({ pokemon }) {
+import { FaStar } from "react-icons/fa";
+
+export function PokemonCard({ pokemon, favourites = [], setFavourites }) {
+  function toggleFavourites() {
+    const index = favourites.indexOf(pokemon.number.toString());
+    if (index < 0) {
+      setFavourites([...favourites, pokemon.number.toString()]);
+    } else {
+      setFavourites([...favourites].filter((i, ind) => ind !== index));
+    }
+  }
   return (
     <div className="pokemon-info">
+      <FaStar
+        className={
+          favourites.includes(pokemon.number.toString()) ? "fav" : "notFav"
+        }
+        onClick={toggleFavourites}
+      />
       <div className="pokemon-info__img-wrapper">
         <img src={pokemon.image} alt={pokemon.name} />
       </div>
